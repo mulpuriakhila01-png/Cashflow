@@ -181,6 +181,97 @@ if uploaded_file:
     r2_scores = cross_val_score(xgb_model, X, y, cv=kfold, scoring='r2')
     st.write(f"Mean R²: {np.mean(r2_scores):.4f} ± {np.std(r2_scores):.4f}")
 
+        # ==============================
+    # 🧮 Manual Input Prediction Form
+    # ==============================
+    st.subheader("🧠 Predict Cash Flow from Manual Input")
+
+    with st.form("prediction_form"):
+        st.markdown("Enter the financial details below to predict Net Cash Flow:")
+
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            Revenue = st.number_input("Revenue", min_value=0.0, step=1000.0)
+            COGS = st.number_input("COGS", min_value=0.0, step=1000.0)
+            Operating_Expenses = st.number_input("Operating Expenses", min_value=0.0, step=1000.0)
+            Depreciation_Amortization = st.number_input("Depreciation & Amortization", min_value=0.0, step=1000.0)
+            Change_in_Inventory = st.number_input("Change in Inventory", step=1000.0)
+            Accounts_Receivable = st.number_input("Accounts Receivable", step=1000.0)
+        with col2:
+            Accounts_Payable = st.number_input("Accounts Payable", step=1000.0)
+            Taxes_Paid = st.number_input("Taxes Paid", min_value=0.0, step=1000.0)
+            CapEx = st.number_input("CapEx", min_value=0.0, step=1000.0)
+            Asset_Sale_Proceeds = st.number_input("Asset Sale Proceeds", min_value=0.0, step=1000.0)
+            Investments_Bought = st.number_input("Investments Bought", min_value=0.0, step=1000.0)
+            Investments_Sold = st.number_input("Investments Sold", min_value=0.0, step=1000.0)
+        with col3:
+            Interest_Received = st.number_input("Interest Received", step=1000.0)
+            Debt_Raised = st.number_input("Debt Raised", min_value=0.0, step=1000.0)
+            Debt_Repaid = st.number_input("Debt Repaid", min_value=0.0, step=1000.0)
+            Interest_Paid = st.number_input("Interest Paid", step=1000.0)
+            Equity_Issued = st.number_input("Equity Issued", step=1000.0)
+            Dividends_Paid = st.number_input("Dividends Paid", step=1000.0)
+
+        submitted = st.form_submit_button("🔮 Predict Cash Flow")
+
+    if submitted:
+        # Create dataframe from user input
+        input_data = pd.DataFrame({
+            'Revenue': [Revenue],
+            'COGS': [COGS],
+            'Operating_Expenses': [Operating_Expenses],
+            'Depreciation_Amortization': [Depreciation_Amortization],
+            'Change_in_Inventory': [Change_in_Inventory],
+            'Accounts_Receivable': [Accounts_Receivable],
+            'Accounts_Payable': [Accounts_Payable],
+            'Taxes_Paid': [Taxes_Paid],
+            'CapEx': [CapEx],
+            'Asset_Sale_Proceeds': [Asset_Sale_Proceeds],
+            'Investments_Bought': [Investments_Bought],
+            'Investments_Sold': [Investments_Sold],
+            'Interest_Received': [Interest_Received],
+            'Debt_Raised': [Debt_Raised],
+            'Debt_Repaid': [Debt_Repaid],
+            'Interest_Paid': [Interest_Paid],
+            'Equity_Issued': [Equity_Issued],
+            'Dividends_Paid': [Dividends_Paid],
+        })
+
+        # Add engineered features same as training
+        input_data['Operating_Cash_Flow'] = (
+            (input_data['Revenue'] - input_data['COGS'] - input_data['Operating_Expenses'])
+            + input_data['Depreciation_Amortization']
+            - (input_data['Change_in_Inventory'] + input_data['Accounts_Receivable'] - input_data['Accounts_Payable'])
+            - input_data['Taxes_Paid']
+        )
+
+        input_data['Investing_Cash_Flow'] = (
+            (-input_data['CapEx'])
+            + input_data['Asset_Sale_Proceeds']
+            - input_data['Investments_Bought']
+            + input_data['Investments_Sold']
+            + input_data['Interest_Received']
+        )
+
+        input_data['Financing_Cash_Flow'] = (
+            input_data['Debt_Raised']
+            - input_data['Debt_Repaid']
+            - input_data['Interest_Paid']
+            + input_data['Equity_Issued']
+            - input_data['Dividends_Paid']
+        )
+
+        # Apply same scaling
+        input_data[numeric_cols] = scaler.transform(
+            input_data.reindex(columns=numeric_cols, fill_value=0)
+        )
+
+        # Predict using trained model
+        prediction = xgb_model.predict(input_data)[0]
+
+        st.success(f"💰 **Predicted Net Cash Flow:** ₹{prediction:,.2f}")
+
+
     st.subheader("📊 Actual vs Predicted Net Cash Flow")
     fig, ax = plt.subplots(figsize=(6,5))
     sns.scatterplot(x=y_test, y=y_pred, color='green', alpha=0.6)
