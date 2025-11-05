@@ -139,6 +139,43 @@ if uploaded_file:
     st.write(f"**R²:** {r2:.4f}")
     st.write(f"**Adjusted R²:** {adj_r2:.4f}")
 
+        # 🔮 Predict for entire dataset
+    if st.button("🔮 Predict Net Cash Flow for Entire Dataset"):
+        data_encoded['Predicted_Net_Cash_Flow'] = xgb_model.predict(X)
+
+        # Reverse scaling for better readability (optional)
+        data['Predicted_Net_Cash_Flow'] = data_encoded['Predicted_Net_Cash_Flow']
+
+        st.subheader("📈 Predicted Results (First 10 Rows)")
+        st.dataframe(
+            data[['Company_Name', 'Month', 'Net_Cash_Flow', 'Predicted_Net_Cash_Flow']].head(10)
+        )
+
+        # 📊 Visualization: Actual vs Predicted for All
+        fig2, ax2 = plt.subplots(figsize=(6,5))
+        sns.scatterplot(
+            x=data['Net_Cash_Flow'], y=data['Predicted_Net_Cash_Flow'],
+            color='blue', alpha=0.6
+        )
+        ax2.plot(
+            [data['Net_Cash_Flow'].min(), data['Net_Cash_Flow'].max()],
+            [data['Net_Cash_Flow'].min(), data['Net_Cash_Flow'].max()],
+            color='red', linestyle='--'
+        )
+        plt.xlabel("Actual Net Cash Flow")
+        plt.ylabel("Predicted Net Cash Flow")
+        plt.title("Actual vs Predicted Net Cash Flow (All Data)")
+        st.pyplot(fig2)
+
+        # 💾 Download option
+        csv = data.to_csv(index=False).encode('utf-8')
+        st.download_button(
+            label="📥 Download Predicted Dataset as CSV",
+            data=csv,
+            file_name="Predicted_CashFlow.csv",
+            mime="text/csv",
+        )
+
     st.subheader("🔄 5-Fold Cross Validation")
     kfold = KFold(n_splits=5, shuffle=True, random_state=42)
     r2_scores = cross_val_score(xgb_model, X, y, cv=kfold, scoring='r2')
