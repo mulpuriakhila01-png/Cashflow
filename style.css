@@ -1,0 +1,2405 @@
+/*
+Theme Name:   EduBlink Child
+Theme URI:    https://demo.edublink.co/
+Author:       DevsVibe
+Author URI:   https://themeforest.net/user/devsblink/portfolio
+Description:  EduBlink Child Theme For LMS and Education Purpose.
+Version:      1.0.0
+Template:     edublink
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain:  edublink-child
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+* If you are not familiar with Child Themes, you can read about it here:
+* http://codex.wordpress.org/Child_Themes
+*/
+
+.edublink-single-course.course-style-2 .instructor {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.edublink-single-course.course-style-2 .instructor img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.edublink-single-course.course-style-2 .instructor .instructor-name {
+    margin-top: 12px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: var(--edublink-p-medium);
+    color: var(--edublink-color-white);
+}
+
+.team-brand-logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.devsblink-doc-iframe {
+    padding-bottom: 56.25%;
+    position: relative;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.devsblink-doc-iframe iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* YouTube/Vimeo Video CSS */
+.eb-yt-video-wrapper {
+    position: relative;
+}
+
+.eb-yt-video-wrapper:before {
+    position: absolute;
+    max-width: 100%;
+    height: 100%;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.eb-yt-content {
+    max-width: 1200px;
+    text-align: center;
+    display: table;
+    height: 500px;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+}
+
+.eb-yt-content .inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.eb-yt-content .inner h1 {
+    font-size: 50px;
+    line-height: 60px;
+}
+
+/* manoj css */
+/* General styles for the program listing */
+.program-listing {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Styles for each program item */
+.program-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    /* Full width */
+    gap: 125px;
+    /* Set column gap */
+}
+
+/* Image and content styling */
+.program-image,
+.program-content {
+    flex: 1;
+    /* Equal space for both */
+}
+
+/* Adjust image styling */
+.program-image img {
+    width: 100%;
+    /* Image fills its container */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Odd and even row styles */
+.program-item.odd {
+    flex-direction: row;
+}
+
+.program-item.even {
+    flex-direction: row-reverse;
+}
+
+/* Button styling */
+.program-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid #ffcc00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Pagination styles */
+.pagination-container,
+.ajax-pagination {
+    text-align: center;
+    /* Center the pagination */
+    margin: 20px 0;
+    /* Space around the pagination */
+}
+
+.pagination,
+.ajax-pagination {
+    display: inline-block;
+    /* Makes it inline block for centering */
+    width: 100%;
+}
+
+.pagination a,
+.ajax-pagination a {
+    display: inline-block;
+    /* Make links inline */
+    margin: 0 5px;
+    /* Space between the links */
+    padding: 10px 15px;
+    /* Padding for the links */
+    color: #fff;
+    /* Text color */
+    border-radius: 5px;
+    /* Rounded corners */
+    text-decoration: none;
+    /* Remove underline */
+    transition: background-color 0.3s;
+    /* Smooth transition for hover */
+
+    display: inline-block;
+    border: 2px solid #ffcc00;
+    color: #FFF;
+
+}
+
+.pagination a:hover,
+.ajax-pagination a:hover {
+    background-color: #ffcc00;
+    /* Darker blue on hover */
+}
+
+.pagination a.active,
+.ajax-pagination a.active {
+    background-color: #ffcc00;
+    /* Color for active page */
+    pointer-events: none;
+    /* Prevent clicking on the active page */
+}
+
+/* Loading spinner styling */
+.loading-spinner {
+    display: block;
+    margin: 20px auto;
+    /* Center the loading spinner */
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+.loading-spinner:before {
+    content: '';
+    border: 4px solid #f3f3f3;
+    /* Light grey */
+    border-top: 4px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+h3.wdm-title {
+    font-size: 16px;
+    font-weight: normal !important;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .program-item {
+        flex-direction: column;
+        /* Stack items vertically */
+        gap: 15px;
+        padding: 0;
+        flex-direction: column !important;
+    }
+
+    .program-image,
+    .program-content {
+        width: 100%;
+        /* Full width for each item */
+    }
+
+    .program-button {
+        width: 100%;
+        text-align: center;
+        /* Center button text */
+    }
+
+    h3.wdm-title {
+        font-size: 18px;
+        /* Adjust title size for mobile */
+    }
+
+    .pagination a,
+    .ajax-pagination a {
+        padding: 8px 12px;
+        /* Smaller padding for pagination on mobile */
+    }
+
+    .program-listing {
+        padding: 15px;
+    }
+}
+
+
+
+/* end manoj css */
+
+@media screen and (max-width: 991px) {
+    .eb-yt-content .inner h1 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .eb-yt-content {
+        height: 350px;
+    }
+}
+
+/* CSS START ON 16/12/2024 */
+
+/* Style for the Back to Category link */
+.back-to-category {
+    margin-top: 0px;
+    /* Add some space at the top */
+    display: flex;
+    /* Use flexbox to control layout */
+    justify-content: flex-end;
+    /* Align the link to the right within its container */
+}
+
+/* Style for the simple link appearance */
+.back-to-category a {
+
+    font-size: 16px;
+    /* Set font size */
+    font-weight: bold;
+    /* Make the font bold */
+    text-decoration: none;
+    /* Remove underline from the link */
+    position: relative;
+    /* Position relative for the arrow */
+    padding-left: 20px;
+    /* Add padding to the left to make space for the arrow */
+}
+
+.course_back_logo_container {
+    display: flex;
+    justify-content: space-between;
+    /* Align content to the right */
+    align-items: center;
+    width: 100%;
+    padding: 10px 3% 10px 0%;
+    /* Adjust padding as needed */
+}
+
+.back-to-category {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Space between logo and button */
+    text-align: right;
+    width: 100%;
+}
+
+/* Logo Styling */
+.course_logo_image {
+    max-width: 350px;
+    /* Adjust as needed */
+    flex-shrink: 0;
+}
+
+.course_logo_image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Button Styling */
+a.button.back-to-category-button {
+    background: #343640;
+    padding: 0px 15px;
+    border-radius: 45px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+a.button.back-to-category-button::before {
+    content: '←';
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body.single-sfwd-lessons .caption-toggle-container.ggg .course_back_logo_container,
+body.single-sfwd-topic .caption-toggle-container.ggg .course_back_logo_container,
+body.single-sfwd-quiz .caption-toggle-container.ggg .course_back_logo_container {
+    padding-right: 0% !important;
+}
+
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_questionListItem.wpProQuiz_answerCorrect>table td {
+    background: transparent;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .course_back_logo_container {
+        justify-content: center;
+        /* Center content for tablets */
+    }
+
+    .back-to-category {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .course_logo_image {
+        max-width: 150px;
+    }
+
+    a.button.back-to-category-button {
+        padding: 0px 10px;
+        font-size: 16px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .course_logo_image {
+        max-width: 160px;
+    }
+
+    a.button.back-to-category-button {
+        padding: 0px 10px;
+        font-size: 14px;
+        gap: 6px;
+    }
+}
+
+
+
+
+/* Hover effect for the link */
+.back-to-category a:hover {
+    color: #005bb5;
+    /* Darken the link color on hover */
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+/* CSS END ON 16/12/2024 */
+
+.caption-toggle-container {
+    display: flex;
+    justify-content: space-between;
+    /* Space between toggle and button */
+    align-items: center;
+    /* Vertically center the items */
+    margin: 10px 0;
+    /* Add some margin for spacing */
+}
+
+.caption-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    /* Vertically align the label and checkbox */
+}
+
+.caption-toggle-wrapper label {
+    margin-right: 8px;
+    /* Space between label and checkbox */
+}
+
+/*.back-to-category {
+    margin-left: 20px;
+} */
+
+a.wp-login-register {
+    display: none;
+}
+
+
+
+/* Ensure the submenu is hidden by default */
+.menu-item-has-children>.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Position the submenu below the parent item */
+    background-color: #1c242f;
+    /* Add a background color for visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for better design */
+    padding: 10px 0;
+    z-index: 9999;
+    /* Ensure it stays above other elements */
+    right: 0 !important;
+    left: auto !important;
+    width: 150px;
+    text-align: left;
+}
+
+/* Show the submenu on hover */
+.menu-item-has-children:hover>.sub-menu {
+    display: block;
+}
+
+/* Style submenu items */
+.menu-item-has-children>.sub-menu>.menu-item>a {
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect for submenu items */
+.menu-item-has-children>.sub-menu>.menu-item>a:hover {
+    color: var(--edublink-color-primary) !important;
+    /* Optional: Change text color on hover */
+}
+
+/* Position the avatar menu for better dropdown behavior */
+.menu-item-avatar {
+    position: relative;
+    /* Required for submenu positioning */
+}
+
+/* Optional: Style the main avatar link */
+.menu-item-avatar>.user-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between the avatar and username */
+    text-decoration: none;
+    color: #333;
+    /* Text color */
+    font-size: 16px;
+}
+
+ul#primary-menu-custom-id li.menu-item span {
+    margin-right: 10px;
+}
+
+body .learndash-wrapper .ld-focus .ld-focus-header .ld-user-menu .ld-user-menu-items a:hover {
+    color: var(--edublink-color-primary) !important;
+    opacity: 1;
+}
+
+.ld-expand-button .ld-icon-arrow-down:before {
+    color: #000;
+}
+
+.ld-item-list-item-preview .ld-status.ld-status-complete.ld-primary-background,
+.ld-item-list-item-preview .ld-status.ld-status-completed.ld-primary-background {
+    background-color: #019e7c !important;
+    color: #fff !important;
+}
+
+.learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name:hover span {
+    color: #000;
+}
+
+.ld-item-list-item-expanded.ld-expanded .ld-item-contents .ld-table-list-item .ld-table-list-title a {
+    color: #333;
+}
+
+body .learndash-wrapper .ld-focus .ld-focus-header .ld-user-menu .ld-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: normal !important;
+    font-weight: bold;
+}
+
+.assignment-info p {
+    margin-bottom: 10px;
+}
+
+
+.delete-assignment a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 15px !important;
+    background: transparent !important;
+    color: #e05a47 !important;
+    border: 1px solid #ffd325 !important;
+}
+
+
+.del_download a.btn.btn-primary {
+    background-color: transparent !important;
+    border: 1px solid #ffd325 !important;
+    color: #ffd325 !important;
+
+}
+
+.del_download a {
+    border-radius: 5px;
+    width: 100px !important;
+}
+
+/*.delete-assignment {
+    width: 100% !important;
+    border: 1px solid red;
+    color: red;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+*/
+.del_download .btn-primary:hover,
+.delete-assignment a:hover {
+    background: rgba(0, 115, 170, 0.8);
+    /* Same color with 80% opacity for a darker effect */
+    transform: scale(1.05);
+    /* Optional subtle zoom effect */
+}
+
+
+.eael-learndash-wrapper.layout__2 {
+    padding: 0 !important;
+}
+
+.ld-table-list.ld-assignment-list span.ld-status.ld-status-complete {
+    color: #000;
+}
+
+.single-sfwd-courses .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name:hover span {
+    color: #7e8d94 !important;
+    opacity: 0.9;
+}
+
+.single-sfwd-assignment .caption-toggle-wrapper label,
+.single-sfwd-assignment .caption-toggle-wrapper input {
+    display: none;
+}
+
+.ld-focus-comments div#ld-expand-button-comments span {
+    color: var(--edublink-color-body) !important;
+}
+
+.learndash-wrapper .ld-focus-comment .ld-comment-avatar .ld-comment-avatar-author .ld-comment-author-name {
+    color: #728188;
+}
+
+.learndash-wrapper .ld-focus-comments #commentform textarea#comment:focus {
+    background: #e2e7ed !important;
+}
+
+form#commentform input#submit {
+    color: #000;
+}
+
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_sortStringItem {
+    color: #0a0a0a !important;
+}
+
+body .learndash-wrapper .ld-button.ld-button-transparent span {
+    color: #FFD325 !important;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-main .ld-focus-content,
+.learndash-wrapper .ld-focus.ld-focus-sidebar-collapsed .ld-focus-main .ld-focus-content {
+    margin-top: 0;
+}
+
+/* .course_logo_image{width: 18%;} */
+
+/*.course_logo_image img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 35px !important;
+    display: block;
+}*/
+
+
+.back-to-category {
+    justify-content: space-between !important;
+}
+
+.edublink-course-details-page {
+    padding-top: 40px;
+}
+
+.single-sfwd-lessons .back-to-category,
+.single-sfwd-quiz .back-to-category {
+    width: 100%;
+    margin: 0;
+}
+
+.single-sfwd-topic .back-to-category {
+    justify-content: space-between !important;
+    display: flex !important;
+    width: 100%;
+}
+
+/*.single-sfwd-topic  .back-to-category a {
+    padding: 15px 10px 5px 35px;
+}
+*/
+.single-sfwd-topic .back-to-category img,
+.single-sfwd-lessons .back-to-category img {
+    max-width: 200px !important;
+    width: 100%;
+}
+
+
+.single-sfwd-quiz .back-to-category img {
+    max-width: 200px;
+}
+
+.learndash-cpt-sfwd-courses-28557858-parent .back-to-category img,
+.learndash-cpt-sfwd-courses-28044990-parent .back-to-category img,
+.learndash-cpt-sfwd-courses-28044949-parent .back-to-category img,
+.learndash-cpt-sfwd-courses-28042589-parent .back-to-category img,
+.learndash-cpt-sfwd-courses-28042589-parent .back-to-category img,
+.learndash-cpt-sfwd-courses-28010658-parent .back-to-category img,
+.learndash-cpt-sfwd-courses-28010348-parent .back-to-category img,
+.learndash-cpt-sfwd-courses-28010348-parent .back-to-category img {
+    max-width: 350px !important;
+}
+
+.single-sfwd-topic .back-to-category {
+    margin-left: 0 !important;
+}
+
+.se_date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.se_date p {
+    font-size: 24px;
+}
+
+/* body .st_en_date_shortcode .elementor-shortcode {
+    padding: 0px 15px !important;
+} */
+
+.se_date span {
+    height: 50px !important;
+    color: #fff !important;
+}
+
+.se_date p.st_date,
+.se_date p.st_date strong {
+    color: #93c47d !important;
+    opacity: 1;
+}
+
+
+.se_date p.en_date,
+.se_date p.en_date strong {
+    color: #a61c00 !important;
+}
+
+.st_en_date_shortcode p {
+    text-align: center;
+}
+
+/*.back-to-category img {max-width: 200px !important;} */
+
+.learndash-wrapper .ld-alert-success {
+    color: #fff;
+    background: #019e7c;
+}
+
+.learndash-wrapper .ld-alert-success .ld-alert-icon {
+    background: #057f64 !important;
+}
+
+.learndash-cpt-sfwd-courses-28081312-parent.single-sfwd-lessons .back-to-category img,
+.learndash-cpt-sfwd-courses-28081312-parent.single-sfwd-topic .back-to-category img,
+.learndash-cpt-sfwd-courses-28069585-parent .back-to-category img {
+    max-width: 400px !important;
+}
+
+
+.assignments-container .pagination a.page-numbers {
+    border-bottom: 2px solid #ffcc00 !important;
+}
+
+.assignments-container .pagination a.page-numbers:hover {
+    color: #000 !important;
+}
+
+.single-sfwd-courses .ld-course-status.ld-course-status-not-enrolled {
+    display: none !important;
+}
+
+body.page-id-28558749 .learndash-wrapper .ld-status-complete {
+    background-color: #019e7c !important;
+    color: #fff !important;
+}
+
+.learndash-complete .ld-expand-button.ld-primary-background.ld-compact.ld-not-mobile {
+    background: #019e7c !important;
+}
+
+/*.learndash-complete .ld-expand-button.ld-primary-background.ld-compact .ld-icon-arrow-down:before, .ld-status-icon.ld-status-complete.ld-secondary-background span.ld-icon-checkmark.ld-icon:before {
+    color: #fff !important;
+}
+*/
+.wpProQuiz_modal_window #wpProQuiz_user_content table.wp-list-table thead th {
+    color: #000;
+}
+
+.wpProQuiz_modal_window input#wpProQuiz_overlay_close {
+    color: #000;
+}
+
+.wpProQuiz_modal_window {
+    background: #333 !important;
+    box-shadow: 0px 10px 30px rgb(49 24 24 / 50%) !important;
+    border-radius: 8px;
+    border: 1px solid #ffd325;
+}
+
+/*
+.wpProQuiz_modal_window #wpProQuiz_user_content table.wp-list-table tbody tr th p {
+    color: #333 !important;
+}
+
+.wpProQuiz_modal_window #wpProQuiz_user_content table.wp-list-table tbody tr th a {
+    color: #645414 !important;
+}
+.wpProQuiz_modal_window div#wpProQuiz_user_content a.button-secondary a {
+    color: #645414 !important;
+}
+*/
+
+.single-sfwd-assignment .learndash-wrapper .ld-focus-comments #ld-comments-form.ld-collapsed {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+}
+
+.single-sfwd-assignment div#ld-comments-post-button {
+    display: none;
+}
+
+.assignment-preview {
+    width: 50%;
+}
+
+.multis_text {
+    color: #ffd325;
+    /* Bright Yellow */
+    font-weight: bold;
+    padding: 5px 0;
+    font-style: italic;
+    /* Italic text */
+}
+
+.del_download a {
+    border-radius: 5px;
+    /*    width: 150px;
+*/
+}
+
+.assignments-gallery .assignment-thumbnail_pdf img {
+    text-align: center;
+    display: inline-block !important;
+    width: 55%;
+    margin: 0 auto;
+}
+
+.assignment-thumbnail_pdf {
+    text-align: center;
+}
+
+.ld-table-list-item.learndash-complete .ld-status-icon.ld-quiz-complete.ld-secondary-color span.ld-icon.ld-icon-quiz {
+    color: #ffd325 !important;
+}
+
+.ld-table-list-item-quiz {
+    margin-left: 15px;
+}
+
+.ld-status-icon.ld-quiz-incomplete,
+.ld-status-icon.ld-quiz-complete {
+    margin-left: 20px;
+}
+
+
+
+/* Style the image thumbnail */
+.assignment-thumbnail {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #ffcf2d;
+    /* golden yellow */
+    margin-bottom: 12px;
+}
+
+/* Ensure the image fits well */
+.assignment-thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    /* already handled by parent */
+}
+
+/* Optional: style download and delete buttons */
+.del_download a.btn {
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.delete-assignment-btn {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+
+.user-profile-container {
+    background-color: #2d2f35;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 60%;
+    margin: auto;
+    /*
+    box-shadow: 0 4px 10px rgba(255, 211, 37, 0.3);
+*/
+    text-align: center;
+}
+
+.profile-photo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#profile-preview {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #FFD325;
+    display: block;
+    margin: auto;
+}
+
+#profile-photo-input {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    color: #FFD325;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FFD325;
+    border-radius: 6px;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.input-group input:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+.submit-btn {
+    background-color: #FFD325;
+    color: #222;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #e6c200;
+}
+
+#profile-message {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FFD325;
+    border-radius: 6px;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.input-group select:focus {
+    outline: none;
+    border-color: #FFD325;
+}
+
+li.menu-item.menu-item-avatar a img {
+    width: 50px;
+    height: 50px;
+}
+
+.user-learndash-gallery {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.user-learndash-gallery h3 {
+    margin-bottom: 50px;
+}
+
+.profile-photo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profile-photo-container img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FFD325;
+}
+
+.file-input-container {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.file-input-container input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.custom-file-button {
+    display: inline-block;
+    background-color: #FFD325;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    border: none;
+}
+
+.custom-file-button:hover {
+    background-color: #FFC107;
+}
+
+a.assignment-thumbnail_pdf {
+    display: inline-block;
+    width: 55%;
+}
+
+/*.learndash-wrapper .ld-focus .ld-focus-header .ld-user-menu .ld-profile-avatar {
+    height: 40px !important;
+    margin-left: 5px !important;
+    width: 40px !important;
+}
+*/
+.ld-user-menu span.ld-profile-avatar {
+    width: 40% !important;
+}
+
+.ld-user-menu span.ld-profile-avatar img {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-header .ld-user-menu .ld-profile-avatar {
+    margin-left: 10px !important;
+}
+
+button#remove-photo {
+    margin-top: 10px;
+    background-color: #2d2f35;
+    color: #969696;
+}
+
+
+/* Style the entire assignment card */
+.assignment-card {
+    background-color: #1e1e1e;
+    border: 2px solid #626d7c4d !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    width: 23.5% !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
+}
+
+.assignment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.assignment-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: unset !important;
+}
+
+.assignments-gallery {
+    gap: 15px !important;
+}
+
+.assignment-thumbnail img:hover {
+    opacity: 0.8;
+}
+
+.assignment-info {
+    padding: 10px 0;
+}
+
+.assignment-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.assignment-info h3 a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.assignment-info h3 a:hover {
+    color: yellow;
+    /* Use your specific yellow hex */
+}
+
+.assignment-info p {
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.assignment-thumbnail img.pdf_icon {
+    height: 100px !important;
+}
+
+.del_download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.single-sfwd-topic .del_download {
+    display: inline-block;
+    width: 100%;
+}
+
+.single-sfwd-topic .assignment-info a {
+    width: 100% !important;
+    margin-left: 0;
+}
+
+.del_download .btn-primary {
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.del_download .btn-primary:hover {
+    background: black;
+}
+
+.delete-assignment-btn {
+    font-size: 14px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+
+.assignment-info p {}
+
+.single-program .e-con-full.e-flex {
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    display: grid;
+}
+
+.program-container h2 {
+    margin-top: 40px;
+}
+
+
+/* ============================
+   General Styling for Form
+   ============================ */
+
+/* Styling the file upload container */
+/*.ld-file-upload {
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 211, 37, 0.3);
+}
+*/
+
+/* Heading style */
+/*.ld-file-upload-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFD325;
+    margin-bottom: 10px;
+}
+*/
+/* Subheading or additional text under the heading */
+.ld-file-upload-heading span {
+    font-size: 14px;
+    color: #CCC;
+    /* Light Gray for secondary text */
+}
+
+.title_field {
+    width: 100%;
+}
+
+/* ============================
+   Input Fields and Labels
+   ============================ */
+
+/* Assignment Title Input Field */
+#assignment_title {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FFD325;
+    /* Yellow border */
+    border-radius: 5px;
+    font-size: 16px;
+    background: #1A1A1A;
+    /* Dark Gray for contrast */
+    color: #FFD325;
+    /* Yellow text */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect for the Assignment Title field */
+/*#assignment_title:focus {
+    border-color: #FFD325;
+    box-shadow: 0 0 8px #FFD325;
+    background: #222;
+}
+*/
+/* Label for Assignment Title */
+label[for="assignment_title"] {
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFD325;
+    /* Primary Yellow */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ============================
+   File Upload Styling
+   ============================ */
+
+/* File Upload Input - Hidden Default Styling */
+#uploadfiles {
+    display: none;
+}
+
+/* Custom File Upload Label */
+label[for="uploadfiles"] {
+    background: #FFD325;
+    /* Primary Yellow */
+    color: #000;
+    /* Black text */
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for file upload button */
+label[for="uploadfiles"]:hover {
+    background: #FFF;
+    /* White on hover */
+    color: #000;
+    /* Black text */
+}
+
+/* ============================
+   Submit Button Styling
+   ============================ */
+
+/* Upload Button */
+/*#uploadfile_btn {
+    background: #FFD325 !important;
+    color: #000 !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+*/
+/* Hover effect for Upload Button */
+#uploadfile_btn:hover {
+    background: #FFF !important;
+    /* White background */
+    color: #000 !important;
+    /* Black text */
+}
+
+/* ============================
+   Form Layout Adjustments
+   ============================ */
+
+/* Ensuring form elements appear on new lines */
+.learndash-wrapper .ld-file-upload .ld-file-upload-form {
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: flex-start;
+    /* Proper text alignment */
+    display: flex;
+    margin-top: 1em;
+    gap: 15px;
+    /* Adds space between fields */
+}
+
+/* Ensure labels are aligned correctly */
+.learndash-wrapper .ld-file-upload .ld-file-upload-form label {
+    width: 100%;
+    display: block;
+}
+
+/* Keep the elements well aligned */
+#assignment_title,
+#uploadfiles,
+#uploadfile_btn {
+    height: auto;
+}
+
+/* ============================
+   Button Layout Fix
+   ============================ */
+
+/* Ensuring the button sizes naturally */
+.learndash-wrapper .ld-file-upload .ld-file-upload-form .ld-button {
+    flex: 0 1 auto;
+    /* Allow button to size dynamically */
+    width: auto;
+    /* Adjust width as per content */
+    min-width: 120px;
+    /* Ensure it doesn’t shrink too much */
+    padding: 10px 20px;
+    /* Good spacing */
+    text-align: center;
+    /* Center align text */
+}
+
+.wpvc_show_style_row .wpvc_card_row {
+    background-color: #000;
+}
+
+img.wpvc_image_popup_hover {
+    /* display: none; */
+}
+
+/*svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
+    color: #000 !important;
+}*/
+
+.single-contestants iframe {
+    height: 425px !important;
+}
+
+.single-contestants h5 {
+    font-size: 32px !important;
+}
+
+p.MuiTypography-root.MuiTypography-body1.wpvc_card_actions_single.css-gjwoc1 span {
+    color: #000 !important;
+    font-size: 14px;
+    margin-right: 9px;
+}
+
+.wpvc_share_social_single {
+    display: none;
+}
+
+div#assignments-container .assignments-gallery .assignment-info a {
+    border-bottom: 1px solid #ffd325 !important;
+}
+
+.wpProQuiz_tipp p,
+.wpProQuiz_tipp h5 {
+    color: #111822 !important;
+}
+
+
+a.continue_next_module.ld-button {
+    display: inline;
+    color: #000;
+}
+
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button_reShowQuestion:hover,
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button_restartQuiz:hover {
+    background: #ffd325 !important;
+}
+
+/* Style for the video card container */
+.wpvc_card_content_row {
+    background-color: #1e1e1e;
+    /* optional: give it a nice dark background */
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Style for the video iframe container */
+.wpvc-video-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #ffcf2d5c;
+    /* nice gold/yellow border */
+    margin-bottom: 16px;
+}
+
+/* Optional: make sure the iframe fills its container properly */
+.wpvc-video-embed iframe {
+    width: 100%;
+    height: auto;
+    /* fixed height for a better layout, adjust as needed */
+    display: block;
+    border: none;
+}
+
+.single-sfwd-topic .assignment-thumbnail {
+    border: none !important;
+}
+
+@keyframes blink-animation {
+    50% {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+    }
+}
+
+.blinking {
+    animation: blink-animation 0.5s infinite alternate;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .assignment-card {
+        width: 31.5%;
+    }
+}
+
+
+
+/* Keep submenu always open on mobile screens */
+@media screen and (max-width: 768px) {
+
+    /* Ensure submenu is always visible on mobile */
+    .menu-item-has-children>.sub-menu {
+        display: block !important;
+        position: static !important;
+        /* Ensure it flows naturally */
+        box-shadow: none !important;
+        /* Remove shadow for simplicity on mobile */
+        padding: 0;
+        /* Remove extra padding */
+        background-color: transparent !important;
+        /* Use transparent background */
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Remove hover dependencies and adjust spacing */
+    .menu-item-has-children>a {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    .menu-item-has-children>.sub-menu>.menu-item>a {
+        padding-left: 20px;
+        /* Indent submenu items */
+    }
+
+    span.user-name {
+        color: #fff;
+    }
+
+    .edublink-mobile-menu-nav-wrapper ul li.menu-item-has-children>a::after {
+        color: #fff;
+    }
+
+    .menu-item-has-children>.sub-menu>.menu-item>a {
+        color: #fff;
+    }
+
+    .del_download {
+        display: flex;
+    }
+
+    .assignment-card {
+        width: 100% !important;
+    }
+
+    button.delete-assignment {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+
+    .learndash-wrapper .wpProQuiz_content ul.wpProQuiz_questionList input.wpProQuiz_questionInput {
+        -webkit-appearance: auto;
+        /*    height: 11px;
+    max-width: 100%;
+    min-width: 4%;*/
+    }
+
+    .wpProQuiz_AnswerMessage {
+        color: #000 !important;
+        /* Change to black or any visible color */
+        font-size: 16px !important;
+        /* Adjust size if necessary */
+        opacity: 1 !important;
+    }
+
+    .course_logo_image {
+        width: 50%;
+        margin: 20px auto;
+    }
+
+    /*    a.button.back-to-category-button {
+        text-align: center;
+        width: 40%;
+        margin: 15px auto;
+        display: block;
+    } */
+
+    .learndash-wrapper .wpProQuiz_content .wpProQuiz_button,
+    .learndash-wrapper .wpProQuiz_content .wpProQuiz_button2 {
+        min-width: auto !important;
+        margin: 5px !important;
+    }
+
+    .learndash-wrapper .ld-quiz-actions .quiz_continue_link,
+    .learndash-wrapper .ld-quiz-actions .wpProQuiz_button,
+    .learndash-wrapper .ld-quiz-actions input[type=button] {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .single-sfwd-topic .back-to-category a {
+        padding: 0px 10px;
+    }
+
+    .single-sfwd-topic .back-to-category img {
+        max-width: 150px !important;
+    }
+
+    .single-sfwd-topic .caption-toggle-container.ggg {
+        margin-bottom: 15px;
+    }
+
+    .se_date p {
+        font-size: 16px;
+    }
+
+    .se_date span {
+        display: none;
+    }
+
+    .back-to-category a::before {
+        margin-left: 0px;
+    }
+
+    .learndash-wrapper .wpProQuiz_content .wpProQuiz_button,
+    .learndash-wrapper .wpProQuiz_content .wpProQuiz_button2 {
+        padding: 1em 1em !important;
+    }
+
+    .user-profile-container {
+        max-width: 100%;
+    }
+
+    /* Optional: make sure the iframe fills its container properly */
+    .wpvc-video-embed iframe {
+        height: auto;
+        /* fixed height for a better layout, adjust as needed */
+    }
+}
+
+.single-sfwd-courses #content .learndash.learndash_post_sfwd-courses.user_has_no_access .learndash-wrapper .ld-tabs.ld-tab-count-1 .ld-tabs-content .ld-tab-content.ld-visible>.learndash-wrapper:last-of-type {
+    max-width: min(100%, 1140px) !important;
+    margin: 0 auto !important;
+}
+
+.single-sfwd-courses #content .learndash.learndash_post_sfwd-courses.user_has_no_access .learndash-wrapper .ld-tabs.ld-tab-count-1 .ld-tabs-content .ld-tab-content.ld-visible>.learndash-wrapper:last-of-type .ld-item-list.ld-lesson-list .ld-section-heading h2 {
+    font-family: 'Proxima Nova', sans-serif;
+    color: rgb(204, 204, 204);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.single-sfwd-courses #content .learndash.learndash_post_sfwd-courses.user_has_no_access .learndash-wrapper .ld-tabs.ld-tab-count-1 .ld-tabs-content .ld-tab-content.ld-visible>.learndash-wrapper:last-of-type .ld-item-list .ld-item-list-item {
+    border-color: #282f3a !important;
+    background: #111822 !important;
+}
+
+.single-sfwd-courses #content .learndash.learndash_post_sfwd-courses.user_has_no_access .learndash-wrapper .ld-tabs.ld-tab-count-1 .ld-tabs-content .ld-tab-content.ld-visible>.learndash-wrapper:last-of-type .ld-item-list .ld-item-list-item {
+    border-color: #282f3a !important;
+    background: #111822 !important;
+    margin: 10px 0 !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 0 !important;
+}
+
+.single-sfwd-courses #content .learndash.learndash_post_sfwd-courses.user_has_no_access .learndash-wrapper .ld-tabs.ld-tab-count-1 .ld-tabs-content .ld-tab-content.ld-visible>.learndash-wrapper:last-of-type .ld-item-list .ld-item-list-item .ld-item-name {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 18px !important;
+    color: #181818 !important;
+    font-weight: 600 !important;
+}
+
+
+/* newcss by sandeep */
+
+.single.single-product .e-con-inner .elementor-element.e-con-full.e-flex.e-con.e-child:first-child,
+.single.single-product .e-con-inner .elementor-element.e-con-full.e-flex.e-con.e-child:last-child {
+    display: none !important;
+}
+
+.single.single-product .e-con-inner .elementor-element.e-con-full.e-flex.e-con.e-child:nth-of-type(2),
+.woocommerce-order-pay .woocommerce,
+.woocommerce-checkout .woocommerce {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50% !important;
+}
+
+.product-template-default.single.single-product,
+.woocommerce-account #page,
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment,
+.woocommerce-order-pay #page,
+.woocommerce-checkout #page {
+    background-color: #fff !important;
+}
+
+.product-template-default.single.single-product .col2-set#customer_details {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.product-template-default.single.single-product .col2-set#customer_details .col-2 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#payment div.payment_box {
+    padding: 0 !important;
+}
+
+#payment .payment_methods .payment_box {
+    background-color: transparent !important;
+    margin-top: 0 !important;
+}
+
+#payment .payment_method_stripe fieldset {
+    border: none !important;
+    margin: 0 !important;
+    padding: 10px 0 0 !important;
+}
+
+#payment div.payment_box .woocommerce-SavedPaymentMethods {
+    padding-left: 0 !important;
+}
+
+#payment .payment_methods.methods label[for="payment_method_stripe"],
+.woocommerce-account .woocommerce h2:not(:empty),
+.woocommerce-account .woocommerce h3:not(:empty),
+.woocommerce-checkout .woocommerce h2:not(:empty),
+.woocommerce-checkout .woocommerce h3:not(:empty),
+.woocommerce-account .woocommerce-MyAccount-content fieldset legend {
+    font-size: 18px !important;
+    padding-bottom: 10px !important;
+    line-height: 28px !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+    margin-bottom: 30px !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+}
+
+.woocommerce form .form-row input,
+.woocommerce form .form-row .input-text,
+.woocommerce-billing-fields .form-row input,
+.woocommerce-billing-fields .form-row .input-text {
+    color: #000 !important;
+}
+
+.woocommerce form .form-row .select2-container .select2-selection--single,
+.woocommerce form .form-row input.input-text,
+.woocommerce-form-coupon .input-text {
+    height: 40px !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px !important;
+}
+
+#customer_details .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper,
+.woocommerce-account .woocommerce-address-fields__field-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 30px;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea {
+    color: #000 !important;
+    font-size: 13px !important;
+}
+
+#customer_details .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .form-row,
+.woocommerce-account .woocommerce-address-fields__field-wrapper .form-row {
+    width: 100% !important;
+}
+
+.product-template-default.single.single-product .woocommerce form .form-row .select2-container .select2-selection--single,
+.woocommerce-account .woocommerce form .form-row .select2-container .select2-selection--single,
+.woocommerce-checkout form .form-row input.input-text,
+.woocommerce-checkout .woocommerce form .form-row .select2-container .select2-selection--single,
+.woocommerce-checkout .woocommerce form .form-row .select2-container .select2-selection--single {
+    background: #f9fafa !important;
+    /* border-color: transparent !important; */
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0 !important;
+    line-height: 18px !important;
+    color: #000 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    top: calc(50% + -12px) !important;
+}
+
+.woocommerce-account .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    top: calc(50% + -2px) !important;
+}
+
+.woocommerce-checkout #payment #place_order,
+#payment #place_order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px !important;
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: #000 !important;
+    font-size: 16px;
+    margin-bottom: 0 !important;
+    color: #fff !important;
+}
+
+.woocommerce-account .woocommerce-Button.button,
+.woocommerce-account .woocommerce-info a.button,
+.woocommerce-account .no_subscriptions.woocommerce-message.woocommerce-message--info {
+    color: #fff !important;
+}
+
+.woocommerce-info:before,
+.woocommerce-message::before {
+    top: 27px !important;
+}
+
+.woocommerce-account .woocommerce a.button {
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    font-family: inherit !important;
+}
+
+.woocommerce .wc_payment_method label[for="payment_method_stripe"],
+.woocommerce .wc_payment_method label[for="payment_method_stripe"],
+#payment .payment_methods.methods label[for="payment_method_stripe"] {
+    display: flex;
+    justify-content: space-between;
+}
+
+.StripeElement {
+    border: none !important;
+}
+
+.woocommerce-form__label-for-checkbox span {
+    color: #666060 !important;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#payment a,
+.e-woocommerce-coupon-nudge.e-checkout-secondary-title a,
+.e-woocommerce-login-section .woocommerce-form-login-toggle.e-checkout-secondary-title a,
+.payment_box.payment_method_stripe .testmode-info a,
+.payment_box.payment_method_stripe .testmode-info a,
+.e-login-actions-wrap .lost_password a,
+.woocommerce-MyAccount-content p a,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a{
+/* .woocommerce-account .woocommerce table.shop_table tr td a,
+.woocommerce-account .woocommerce table.shop_table tr td.product-name a,
+.woocommerce-account .woocommerce table.shop_table tr td.order-number a,
+.woocommerce-account .woocommerce table.shop_table tr th a { */
+    font-weight: 600 !important;
+    color: #FFD325 !important;
+}
+
+.woocommerce table.shop_table tr th a,
+.woocommerce table.shop_table tr td a {
+    font-weight: 600 !important;
+}
+
+.woocommerce-privacy-policy-text p {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #787878 !important;
+}
+
+.e-woocommerce-coupon-nudge.e-checkout-secondary-title,
+.e-woocommerce-login-section .woocommerce-form-login-toggle.e-checkout-secondary-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000 !important;
+}
+
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>thead>tr>th {
+    color: #787878 !important;
+}
+
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table {
+    margin-top: 0 !important;
+}
+
+.single.single-product .woocommerce .shop_table tbody td,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tbody>tr>td span,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tfoot>tr>td,
+.single.single-product .woocommerce table.shop_table>tbody>tr>td span,
+.single.single-product .woocommerce table.shop_table,
+.single.single-product .woocommerce table.shop_table strong,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tbody>tr>td a,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tbody>tr>td span,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tfoot>tr>td,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tbody>tr>td:first-child,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tfoot>tr>th:first-child,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>tfoot>tr>td:first-child,
+.single.single-product .woocommerce table.shop_table.woocommerce-checkout-review-order-table>thead>tr>th,
+.single.single-product .woocommerce .woocommerce-checkout-review-order-table td span,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a,
+p.testmode-info strong,
+.single.single-product .woocommerce-error li a,
+.woocommerce-checkout .woocommerce-error li a,
+.woocommerce .woocommerce-error li a,
+.woocommerce-account .woocommerce table.shop_table>thead>tr>th,
+.woocommerce-account .woocommerce table.shop_table>thead>tr>td,
+.woocommerce-account .woocommerce-MyAccount-navigation li a,
+.woocommerce-account .woocommerce table.shop_table tbody tr td,
+.woocommerce-account .woocommerce table.shop_table>tbody>tr>td a,
+.woocommerce-account .woocommerce table.shop_table>tbody>tr>td span,
+.woocommerce-account .woocommerce table.shop_table,
+.woocommerce-account .woocommerce table.shop_table strong {
+    color: #000 !important;
+}
+
+.woocommerce-account .woocommerce table.shop_table>thead>tr>th {
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+    border-radius: 0 !important;
+    color: #666060 !important;
+}
+
+.woocommerce table.shop_table>tbody>tr>td a,
+.woocommerce table.shop_table>tbody>tr>td span,
+.woocommerce table.shop_table,
+.woocommerce table.shop_table strong,
+.woocommerce-SavedPaymentMethods.wc-saved-payment-methods li label,
+.p-FieldLabel.Label,
+.woocommerce table.shop_table.woocommerce-checkout-review-order-table>thead>tr>th,
+.woocommerce-checkout .woocommerce table.shop_table.woocommerce-checkout-review-order-table tr th,
+.woocommerce-checkout .woocommerce table.shop_table.woocommerce-checkout-review-order-table tr td,
+.woocommerce-checkout .woocommerce table.shop_table.woocommerce-checkout-review-order-table tr td span,
+.woocommerce-order-received .woocommerce table.woocommerce-table--order-details.shop_table tr th,
+.woocommerce-order-received .woocommerce table.my_account_orders.shop_table tr th,
+.woocommerce .select2-container .select2-dropdown li {
+    color: #666060 !important;
+}
+
+.woocommerce-checkout .woocommerce table.shop_table.woocommerce-checkout-review-order-table tfoot tr td span,
+.woocommerce-checkout .woocommerce table.shop_table.woocommerce-checkout-review-order-table tfoot th,
+.woocommerce table.shop_table.order_details tfoot th,
+.woocommerce table.shop_table.order_details tfoot td {
+    font-weight: 600 !important;
+}
+
+.woocommerce-account .woocommerce table.shop_table>tbody>tr>td,
+.woocommerce-account .woocommerce table.shop_table>tfoot>tr>th,
+.woocommerce-account .woocommerce table.shop_table>tfoot>tr>td,
+.woocommerce-account .woocommerce .woocommerce-order-details table.shop_table>thead>tr>th,
+.woocommerce-account .woocommerce .woocommerce-order-details table.shop_table>tbody>tr>td,
+.woocommerce-account .woocommerce .woocommerce-order-details table.shop_table>tfoot>tr>th,
+.woocommerce-account .woocommerce .woocommerce-order-details table.shop_table>tfoot>tr>td,
+.woocommerce-order-pay .woocommerce #order_review table.shop_table>thead>tr>th,
+.woocommerce-account .woocommerce table.woocommerce-orders-table>tr>td,
+.woocommerce-order-received .woocommerce table thead tr th,
+.woocommerce-order-received .woocommerce table tbody tr td {
+    padding: 7px 0 !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+    color: #666060 !important;
+    border-radius: 0 !important;
+}
+
+.woocommerce-account .woocommerce table.shop_table>tbody>tr>td span {
+    font-weight: 600 !important;
+}
+
+.woocommerce-account .table-striped>tbody>tr:nth-of-type(odd),
+.woocommerce-order-pay .woocommerce #order_review .table-striped>tbody>tr:nth-of-type(odd),
+.woocommerce-order-received .woocommerce table.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: transparent !important;
+}
+
+.woocommerce-account .woocommerce table.shop_table tbody th,
+.woocommerce-account .woocommerce table.shop_table tfoot td,
+.woocommerce-account .woocommerce table.shop_table tfoot th {
+    border: none !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+
+.woocommerce-account .woocommerce-table--order-details.shop_table>thead>tr>th,
+.woocommerce-account .woocommerce-table--order-details.shop_table>tbody>tr>td,
+.woocommerce-account .woocommerce-table--order-details.shop_table>tfoot>tr>th,
+.woocommerce-account .woocommerce-table--order-details.shop_table>tfoot>tr>td {
+    border: none !important;
+    border-bottom-color: #fff !important;
+}
+
+.single.single-product .elementor-widget-container>p:first-of-type,
+.single.single-product .elementor-widget-container>p:first-of-type strong {
+    text-align: center !important;
+    margin-bottom: 0 !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #000 !important;
+}
+
+.woocommerce-MyAccount-content p,
+.woocommerce-MyAccount-content p strong,
+p.testmode-info,
+p.e-woocommerce-login-nudge.e-description,
+.lost_reset_password p {
+    color: #808080 !important;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+    font-weight: 600 !important;
+}
+
+.woocommerce-error {
+    background-color: #fee2e2 !important;
+}
+
+.single.single-product .woocommerce-error li a,
+.woocommerce-checkout .woocommerce-error li a,
+.woocommerce .woocommerce-error li a {
+    text-decoration: none !important;
+}
+
+.single.single-product .woocommerce-error li:first-of-type,
+.woocommerce .woocommerce-error li:first-of-type,
+.woocommerce-checkout .woocommerce-error li:first-of-type {
+    margin-top: 0 !important;
+    color: #a00 !important;
+}
+
+.single.single-product .woocommerce-error li strong,
+.woocommerce .woocommerce-error li strong,
+.woocommerce-checkout .woocommerce-error li strong {
+    color: #a00 !important;
+}
+
+.woocommerce form .form-row label .require {
+    color: #a00 !important;
+}
+
+.woocommerce p.checkout-inline-error-message {
+    font-size: 13px !important;
+    color: #a00 !important;
+    margin-bottom: 0 !important;
+}
+
+.woocommerce-account .woocommerce-billing-fields__field-wrapper label,
+.woocommerce-account .woocommerce-additional-fields__field-wrapper label,
+.woocommerce-account .woocommerce form .form-row label,
+.woocommerce-billing-fields__field-wrapper label,
+.woocommerce-checkout .woocommerce form .form-row label {
+    color: #69727d;
+    font-weight: 600;
+    font-size: 13px!important;
+}
+
+.woocommerce-account .woocommerce form .form-row input.input-text,
+.woocommerce-account .woocommerce form .form-row textarea,
+.woocommerce-account .woocommerce-form-coupon .input-text {
+    background: #f9fafa;
+    border: 1px solid transparent;
+}
+
+@media (max-width: 767px) {
+
+    .single.single-product .e-con-inner .elementor-element.e-con-full.e-flex.e-con.e-child:first-child,
+    .single.single-product .e-con-inner .elementor-element.e-con-full.e-flex.e-con.e-child:last-child {
+        display: none !important;
+    }
+
+    .single.single-product .e-con-inner .elementor-element.e-con-full.e-flex.e-con.e-child:nth-of-type(2) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    #customer_details .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper,
+    .woocommerce-account .woocommerce-address-fields__field-wrapper,
+    .woocommerce-order-received .woocommerce ul.order_details {
+        grid-template-columns: 1fr;
+    }
+
+    .woocommerce table.shop_table.woocommerce-checkout-review-order-table,
+    .woocommerce table.shop_table.woocommerce-table--order-details {
+        border: none !important;
+    }
+
+    .page-template.woocommerce-account .woocommerce .woocommerce-MyAccount-content .shop_table tbody tr td[data-title="Actions"] {
+        justify-content: start !important;
+    }
+
+    .woocommerce-account.woocommerce-view-order table tbody tr.woocommerce-table__line-item.order_item,
+    .woocommerce-order-pay table.shop_table tbody tr.order_item,
+    .woocommerce-view-subscription table.shop_table.order_details tbody tr.order_item,
+    .woocommerce-order-pay table.shop_table tbody tr,
+    .woocommerce-order-received table.shop_table tbody tr.woocommerce-table__line-item.order_item {
+        border: 0 !important;
+        display: contents !important;
+    }
+
+    .woocommerce-order-received table.shop_table.woocommerce-table--order-details {
+        border: 0 !important;
+    }
+
+    table.shop_table .product-name a {
+        padding-left: 0 !important;
+    }
+
+    .woocommerce-checkout .woocommerce .shop_table.woocommerce-checkout-review-order-table {
+        min-width: 100% !important;
+        width: 100% !important;
+        border: 0 !important;
+    }
+
+    .woocommerce-order-received .woocommerce ul.order_details li {
+        border-right: 0 !important;
+    }
+}
+
+.woocommerce-account .button,
+.woocommerce-account .woocommerce-Button.button {
+    color: #000 !important;
+    font-weight: 600 !important;
+    height: auto !important;
+    line-height: 3 !important;
+}
+
+#payment .payment_method_stripe input[name="payment_method"] {
+    width: auto !important;
+    height: auto !important;
+}
+
+.single.single-product .elementor-widget-woocommerce-checkout-page .e-login-actions-wrap-end .lost_password {
+    font-size: 14px !important;
+}
+
+.single.single-product .e-woocommerce-form-login-submit,
+.single.single-product .woocommerce-button {
+    background-color: #FFDB7E !important;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0 !important;
+    height: auto !important;
+    border: none ! Important;
+    color: #000 !important;
+    font-family: inherit !important;
+    letter-spacing: 0.3px !important;
+}
+
+.edublink-breadcrumb-style-1 .edublink-page-title h1 {
+    line-height: normal !important;
+    font-size: 28px !important;
+    margin-bottom: 0 !important;
+}
+
+.edublink-breadcrumb-style-1 {
+    padding: 40px 0 !important;
+}
+
+.woocommerce-orders-table__cell .woocommerce-button.button.view {
+    line-height: 1 !important;
+    color: #000 !important;
+}
+
+.woocommerce-account .woocommerce table.shop_table th {
+    line-height: normal !important;
+}
+
+.woocommerce-account .woocommerce .woocommerce-MyAccount-content .shop_table tbody tr td[data-title="Actions"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: end !important;
+    gap: 0 15px;
+}
+
+.woocommerce .woocommerce-checkout-review-order-table .order-total td span {
+    font-weight: 500;
+    color: #000 !important;
+}
+
+.woocommerce .woocommerce-checkout-review-order-table .order-total td span {
+    font-weight: 500;
+    color: #000 !important;
+}
+
+.woocommerce-account .woocommerce table.woocommerce-table--order-details.shop_table>tbody>tr>td,
+.woocommerce-account .woocommerce table.woocommerce-table--order-details.shop_table>tfoot>tr>th,
+.woocommerce-account .woocommerce table.woocommerce-table--order-details.shop_table>tfoot>tr>td,
+.woocommerce-account .woocommerce table.shop_table.order_details>tbody>tr>td,
+.woocommerce-account .woocommerce table.shop_table.order_details>tfoot>tr>td,
+.woocommerce-account .woocommerce table.shop_table.order_details>tfoot>tr>th {
+    border: none !important;
+}
+
+.woocommerce table.shop_table>tbody>tr>td a {
+    font-weight: 600 !important;
+    color: #FFD325 !important;
+}
+
+table.shop_table #tr-_billing_wooccm11 th,
+#tr-_billing_wooccm12 th,
+#tr-_billing_wooccm13 th,
+table.shop_table #tr-_billing_wooccm11 td,
+#tr-_billing_wooccm12 td,
+#tr-_billing_wooccm13 td {
+    border: none !important;
+}
+
+.woocommerce table.shop_table>tbody>tr>td a.button {
+    line-height: 1 !important;
+}
+
+.woocommerce table.shop_table>tbody>tr>td a.button.subscription_renewal_early {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.woocommerce table.shop_table>tbody>tr>td a.button.cancel {
+    color: #555758 !important;
+    background-color: #e3e3e3 !important;
+}
+
+.shop_table.subscription_details tbody tr:first-child td,
+.woocommerce-order-pay .woocommerce #order_review table.shop_table>tfoot>tr>th,
+.woocommerce-order-received .woocommerce .woocommerce-order p {
+    font-weight: 600 !important;
+    color: #666060 !important;
+}
+
+.woocommerce-order-pay .woocommerce #order_review {
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    padding: 16px 30px !important;
+}
+
+.woocommerce.woocommerce-checkout form #customer_details.col2-set,
+.woocommerce-page.woocommerce-checkout form #customer_details.col2-set,
+.woocommerce-checkout #order_review.woocommerce-checkout-review-order {
+    min-width: 100%;
+    margin-right: 0;
+}
+
+.woocommerce-input-wrapper #update_all_subscriptions_addresses,
+.woocommerce form .form-row .input-checkbox {
+    width: auto !important;
+    height: auto !important;
+}
+
+.woocommerce-account .woocommerce .woocommerce-MyAccount-content .shop_table tbody tr td a.button.wcs_deletion_error {
+    background-color: #df1b41 !important;
+    color: #fff !important;
+}
+
+#payment ul.payment_methods.methods {
+    padding: 0 !important;
+}
+
+#payment div.form-row {
+    padding: 0 !important;
+    padding-top: 15px !important;
+}
+
+#payment div.form-row:last-child {
+    margin-bottom: 0px !important;
+}
+
+.woocommerce-checkout #customer_details .woocommerce-billing-fields,
+.woocommerce-checkout #customer_details .woocommerce-additional-fields,
+.woocommerce-checkout #payment.woocommerce-checkout-payment {
+    padding: 16px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.single.single-product #customer_details .woocommerce-billing-fields {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: unset !important;
+}
+
+.single.single-product .col-1 {
+    margin-bottom: 0 !important;
+}
+
+.single.single-product .col-2 {
+    display: none !important;
+}
+
+.woocommerce-checkout #customer_details .woocommerce-additional-fields {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.woocommerce-checkout #customer_details .woocommerce-additional-fields h3 {
+    margin-top: 0 !important;
+}
+
+.woocommerce-checkout .shop_table.woocommerce-checkout-review-order-table,
+.woocommerce-order-received .woocommerce table {
+    margin-top: 0 !important;
+}
+
+.woocommerce-order-received .woocommerce .woocommerce-order .woocommerce-thankyou-order-received {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 600;
+    color: #000 !important;
+}
+
+.woocommerce-order-received .woocommerce .woocommerce-order ul.order_details {
+    margin: 0 0 2em !important;
+    padding-left: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+}
+
+.woocommerce-order-received .woocommerce ul.order_details:before {
+    content: none !important;
+}
+
+.woocommerce-checkout .woocommerce h3#order_review_heading {
+    margin-top: 30px !important;
+}
+
+.woocommerce-order-received .woocommerce ul.order_details li {
+    color: #808080 !important;
+    font-weight: 500 !important;
+    white-space: nowrap;
+    line-height: 2.2;
+}
+
+.woocommerce-order-received .woocommerce ul.order_details li strong {
+    color: #8f8484;
+    font-size: 1.2em;
+    font-weight: 600 !important;
+    text-overflow: unset;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+.woocommerce-order-received .woocommerce .woocommerce-order {
+    border: 1px solid #ccc;
+    margin: 0px auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: transparent;
+    padding: 16px 30px;
+}
+
+.select2-dropdown .select2-results__options li.select2-results__option:hover,
+.select2-dropdown .select2-results__options li.select2-results__option--highlighted {
+    background-color: #e7e7e7 !important;
+}
+
+.woocommerce-checkout .edublink-main-content-inner.edublink-row,
+.woocommerce-account .edublink-main-content-inner.edublink-row
+ {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+
+.woocommerce-checkout .woocommerce .form-row .select2-container--default .select2-selection--single,
+.woocommerce-account .woocommerce .form-row .select2-container--default .select2-selection--single,
+.single.single-product .woocommerce .form-row .select2-container--default .select2-selection--single,
+.woocommerce-checkout .woocommerce .form-row .input-text,
+.single.single-product .woocommerce .form-row .input-text,
+.woocommerce-account .woocommerce .form-row .input-text{
+    border: 1px solid #c5c5c5!important;
+}
+
+.woocommerce div.product div.images img {
+    width: 50%!important;
+    margin: 0 auto!important;
+}
+
+body.single.single-product div.product .elementor-widget-woocommerce-product-images div.images{
+    margin-bottom: 0!important;
+}
+
+body.single.single-product .e-con.e-flex>.e-con-inner:first-child{
+	padding-bottom: 0!important;
+}
+
+.woocommerce-lost-password .woocommerce p {
+    color: #808080 !important;
+}
+
+.woocommerce-account .woocommerce table.shop_table tr td a,
+.woocommerce-account .woocommerce table.shop_table tr td.product-name a,
+.woocommerce-account .woocommerce table.shop_table tr td.order-number a,
+.woocommerce-account .woocommerce table.shop_table tr th a{
+    color: #000!important;
+    font-weight: 600!important;
+}
+
+.woocommerce-account .woocommerce-error,
+.woocommerce-account .woocommerce-info,
+.woocommerce-account .woocommerce-message,
+.woocommerce-checkout .woocommerce-error,
+.woocommerce-checkout .woocommerce-info,
+.woocommerce-checkout .woocommerce-message,
+.woocommerce-checkout .woocommerce-info:before,
+.woocommerce-checkout .woocommerce-message::before,
+.woocommerce-account .woocommerce-info:before,
+.woocommerce-account .woocommerce-message::before{
+    color: #000!important;
+}
+
+.woocommerce-account .woocommerce-error a,
+.woocommerce-account .woocommerce-info a,
+.woocommerce-account .woocommerce-message a {
+    text-decoration: none!important;
+}
+
+.woocommerce table.order_details.shop_table>tbody>tr>td a.button,
+.woocommerce table.woocommerce-orders-table.shop_table>tbody>tr>td a.button{
+    padding-left: 21px;
+    margin-right: 15px!important;
+}
+
+.woocommerce table.order_details.shop_table>tbody>tr>td a.button:last-child,
+.woocommerce table.woocommerce-orders-table.shop_table>tbody>tr>td a.button:last-child{
+    margin-right: 0px!important;
+}
+
+.back-to-category-button:hover{
+    color: #000!important;
+}
